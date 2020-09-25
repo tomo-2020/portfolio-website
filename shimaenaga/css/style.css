@@ -68,7 +68,6 @@ body {
 .header__inner {
   height: 60px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -93,11 +92,13 @@ body {
 
 .header__nav {
   width: 218px;
+  margin-left: auto;/* ヘッダー中央に要素が追加されても柔軟に対応 */
 }
 
 @media (max-width: 767px) {
   .header__nav {
     margin-top: 18px;
+    margin-left: initial;
   }
 }
 

@@ -93,7 +93,6 @@ $color-white: #ffffff;
     &__inner {
         height: 60px;
         display: flex;
-        justify-content: space-between;
         align-items: center;
 
         @include sp {
@@ -116,9 +115,11 @@ $color-white: #ffffff;
 
     &__nav {
         width: 218px;
+        margin-left: auto;/* ヘッダー中央に要素が追加されても柔軟に対応 */
 
         @include sp {
             margin-top: 18px;
+            margin-left: initial;
         }
     }
 

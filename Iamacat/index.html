@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- レスポンシブで各デバイスのサイズに合わせるためのもの -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="scss/destyle.css"> <!-- ノーマライズCSS -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"> <!-- fontawesome -->
+    <link rel="stylesheet" href="scss/style.css">
+    <title>lamacat＜練習用＞</title>
+    <meta name="description" content="「lamacat」の練習用サイトです。">
+    <meta name="robots" content="noindex,nofollow" /> <!-- ポートフォリオ用模写コーディングサイト -->
+
+    <!-- OGP SNS利用時に設定
+    <meta property="og:url" content="ページのURL" />
+    <meta property="og:title" content="ページのタイトル" />
+    <meta property="og:type" content="ページのタイプ">
+    <meta property="og:description" content="記事の抜粋" />
+    <meta property="og:image" content="画像のURL" />
+    <meta name="twitter:card" content="カード種類" />
+    <meta name="twitter:site" content="@Twitterユーザー名" />
+    <meta property="og:site_name" content="サイト名" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="fb:app_id" content="appIDを入力" />
+    -->
+
+    <!-- 重複ページが出た場合に、SEO評価分散のリスクを防止するために設定
+    <link rel="canonical" href="正規化するURL" />
+    -->
+
+    <!-- ファビコン ※必須
+    <link rel="icon" href="/favicon.ico">
+    -->
+    <!-- スマホ用アイコン ※必須
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    -->
+    <!-- Windows用アイコン ※任意
+    <meta name="application-name" content="{サイト名}"/>
+    <meta name="msapplication-square70x70logo" content="small.jpg"/>
+    <meta name="msapplication-square150x150logo" content="medium.jpg"/>
+    <meta name="msapplication-wide310x150logo" content="wide.jpg"/>
+    <meta name="msapplication-square310x310logo" content="large.jpg"/>
+    <meta name="msapplication-TileColor" content="#FAA500"/>
+    -->
+</head>
+
+
+<body>
+<!-- start header -->
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+
+      <!-- start logo -->
+      <div class="header__logo">
+        <h1>
+          <a href="#"  class="header__logo-link">
+            <img src="image/logo/logo_lamacat.png" srcset="image/logo/logo_lamacat.png 1x, image/logo/logo_lamacat@2x.png 2x" width="100" height="36" loading="lazy" alt="cat's" class="header__image">
+          </a>
+        </h1>
+      </div>
+      <!-- end logo -->
+
+      <!-- start pc-nav -->
+      <nav class="header__pc-nav">
+        <ul class="header__list">
+          <li class="header__item">
+            <a href="#cat1" class="header__nav-link">Cat1</a>
+          </li>
+          <li class="header__item">
+            <a href="#cat2" class="header__nav-link">Cat2</a>
+          </li>
+          <li class="header__item">
+            <a href="#cat3" class="header__nav-link">Cat3</a>
+          </li>
+          <li class="header__item">
+            <a href="#" class="header__contact-link">お問い合わせ</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- end pc-nav -->
+
+      <!-- start sp-nav -->
+      <nav class="sp-nav">
+        <div class="sp-nav__drawer">
+          <input class="sp-nav__unshown" id="sp-nav__input" type="checkbox">
+          <label class="sp-nav__open" for="sp-nav__input">
+            <span class="sp-nav__icon"></span>
+          </label>
+          <label class="sp-nav__close" for="sp-nav__input"></label>
+
+          <!-- start ハンバーガーメニュー -->
+          <div class="sp-nav__content">
+            <ul class="sp-nav__list">
+              <li class="sp-nav__item">
+                <a href="#" class="sp-nav__link">TOP</a>
+              </li>
+              <li class="sp-nav__item">
+                <a href="#cat1" class="sp-nav__link">CAT1</a>
+              </li>
+              <li class="sp-nav__item">
+                <a href="#cat2" class="sp-nav__link">CAT2</a>
+              </li>
+              <li class="sp-nav__item">
+                <a href="#cat3" class="sp-nav__link">CAT3</a>
+              </li>
+              <li class="sp-nav__item">
+                <a href="#" class="sp-nav__link">お問い合わせ</a>
+              </li>
+            </ul>
+          </div>
+          <!-- end ハンバーガーメニュー -->
+
+        </div>
+      </nav>
+      <!-- end sp-nav -->
+
+    </div>
+  </div>
+
+</header>
+<!-- end header -->
+
+<main class="main">
+
+  <!-- start hero -->
+  <section class="hero">
+    <img src="image/img/img_lamacat.png" srcset="image/img/img_lamacat.png 1x, image/img/img_lamacat@2x.png 2x" width="270" height="145" loading="lazy" alt="cat's" class="hero__title">
+  </section>
+  <!-- end hero -->
+
+  <!-- start introduction -->
+  <section class="introduction">
+    <div class="container">
+      <h2 class="introduction__title">吾輩は猫である。名前はまだ無い。</h2>
+      <p class="introduction__lead">どこで生れたかとんと見当がつかぬ。<br>
+        何でも薄暗いじめじめした所で<br>
+        ニャーニャー泣いていた事だけは記憶している。</p>
+      <p class="introduction__lead">吾輩はここで始めて人間というものを見た。<br>
+        しかもあとで聞くとそれは書生という人間中で<br>
+        一番獰悪な種族であったそうだ。</p>
+      <p class="introduction__lead">この書生というのは時々我々をつかまえて<br>
+        煮て食うという話である。</p>
+    </div>
+  </section>
+  <!-- end introduction -->
+
+  <!-- start cat1 -->
+  <section id="cat1" class="cat1">
+    <div class="container">
+      <h2 class="section__title">CAT1</h2>
+      <ul class="cat1__list">
+        <li class="cat1__item">
+          <figure class="cat1__figure">
+            <img src="image/img/img_cat-01.jpg" srcset="image/img/img_cat-01.jpg 1x, image/img/img_cat-01@2x.jpg 2x" width="450" height="278" loading="lazy" alt="" class="cat1__image">
+          </figure>
+          <div class="cat1__block">
+            <h3 class="cat1__title">吾輩は猫である。名前はまだ無い。</h3>
+            <p class="cat1__description">然もあとで聞くとそれは書生といふ人間中で一番獰悪な種族であつたさうだ。此書生といふのは時々我々を捕へて煮て食ふといふ話である。然し其當時は何といふ考もなかつたから別段恐しいとも思はなかつた。</p>
+          </div>
+        </li>
+        <li class="cat1__item">
+          <figure class="cat1__figure">
+            <img src="image/img/img_cat-02.jpg" srcset="image/img/img_cat-02.jpg 1x, image/img/img_cat-02@2x.jpg 2x" width="450" height="278" loading="lazy" alt="" class="cat1__image">
+          </figure>
+          <div class="cat1__block">
+            <h3 class="cat1__title">吾輩は猫である。名前はまだ無い。</h3>
+            <p class="cat1__description">但彼の掌に載せられてスーと持ち上げられた時何だかフハフハした感じが有つた許りである。掌の上で少し落ち付いて書生の顔を見たのが所謂人間といふものゝ見始であらう。</p>
+          </div>
+        </li>
+        <li class="cat1__item">
+          <figure class="cat1__figure">
+            <img src="image/img/img_cat-03.jpg" srcset="image/img/img_cat-03.jpg 1x, image/img/img_cat-03@2x.jpg 2x" width="450" height="278" loading="lazy" alt="" class="cat1__image">
+          </figure>
+          <div class="cat1__block">
+            <h3 class="cat1__title">吾輩は猫である。名前はまだ無い。</h3>
+            <p class="cat1__description">此時妙なものだと思つた感じが今でも殘つて居る。第一毛を以て装飾されべき筈の顔がつるつるして丸で薬罐だ。其後猫にも大分逢つたがこんな片輪には一度も出會はした事がない。加之顔の眞中が餘りに突起して居る。</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section id="cat1">
+  <!-- end cat1 -->
+
+  <!-- start cat2 -->
+  <section id="cat2" class="cat2">
+    <div class="container">
+      <h2 class="section__title">CAT2</h2>
+      <ul class="cat2__list">
+        <li class="cat2__card">
+          <figure class="cat2__figure">
+            <img src="image/img/img_cat-04.jpg" srcset="image/img/img_cat-04.jpg 1x, image/img/img_cat-04@2x.jpg 2x" width="300" height="185" loading="lazy" alt="" class="cat2__image">
+            <figcaption class="cat2__caption">そうして其穴の中から時々ぷうぷうと烟を吹く。どうも咽せぽくて實に弱つた。</figcaption>
+          </figure>
+        </li>
+        <li class="cat2__card">
+          <figure class="cat2__figure">
+            <img src="image/img/img_cat-05.jpg" srcset="image/img/img_cat-05.jpg 1x, image/img/img_cat-05@2x.jpg 2x" width="300" height="185" loading="lazy" alt="" class="cat2__image">
+            <figcaption class="cat2__caption">是が人間の飲む烟草といふものである事は漸く此頃知つた。</figcaption>
+          </figure>
+        </li>
+        <li class="cat2__card">
+          <figure class="cat2__figure">
+            <img src="image/img/img_cat-06.jpg" srcset="image/img/img_cat-06.jpg 1x, image/img/img_cat-06@2x.jpg 2x" width="300" height="185" loading="lazy" alt="" class="cat2__image">
+            <figcaption class="cat2__caption">此書生の掌の裏でしばらくはよい心持に坐つて居つたが、暫くすると非常な速力で運轉し始めた。</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </section id="cat1">
+  <!-- end cat2 -->
+
+  <!-- start image-section -->
+  <section class="image-section">
+    <div class="container">
+      <div class="image-section__inner">
+        <div class="image-section__block">
+          <p class="image-section__text">そうして其穴の中から時々ぷうぷうと烟を吹く。<br>
+            どうも咽せぽくて實に弱つた。<br>
+            是が人間の飲む烟草といふものである事は漸く此頃知つた。</p>
+          <p class="image-section__text">此書生の掌の裏でしばらくはよい心持に坐つて居つたが、<br>
+            暫くすると非常な速力で運轉し始めた。<br>
+            書生が動くのか自分丈が動くのか分らないが無暗に眼が廻る。胸が惡くなる。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end image-section -->
+
+  <!-- start cat3 -->
+  <section id="cat3" class="cat3">
+    <div class="container">
+      <h2 class="section__title">CAT3</h2>
+      <ul class="cat3__list">
+        <li class="cat3__item">
+          <a href="#" class="cat3__link">
+            <div class="cat3__group">
+              <time class="cat3__time" datetime="2018-02-09">2018.02.09</time>
+              <p class="cat3__category">新着</p>
+            </div>
+            <p class="cat3__text">縁は不思議なもので、もし此竹垣が破れて居なかつたなら、</p>
+          </a>
+        </li>
+        <li class="cat3__item">
+          <a href="#" class="cat3__link">
+            <!-- <div class="caat3__link-inner"> -->
+              <div class="cat3__group">
+                <time class="cat3__time" datetime="2018-02-09">2018.02.09</time>
+                <p class="cat3__category">新着</p>
+              </div>
+              <p class="cat3__text">吾輩は遂に路傍に餓死したかも知れんのである。一樹の蔭とはよく云つたものだ。</p>
+            <!-- </div> -->
+          </a>
+        </li>
+        <li class="cat3__item">
+          <a href="#" class="cat3__link">
+            <div class="cat3__group">
+              <time class="cat3__time" datetime="2018-02-09">2018.02.09</time>
+              <p class="cat3__category">新着</p>
+            </div>
+            <p class="cat3__text">此垣根の穴は今日に至る迄吾輩が隣家の三毛を訪問する時の通路になつて居る。</p>
+          </a>
+        </li>
+        <li class="cat3__item">
+          <a href="#" class="cat3__link">
+            <div class="cat3__group">
+              <time class="cat3__time" datetime="2018-02-09">2018.02.09</time>
+              <p class="cat3__category">新着</p>
+            </div>
+            <p class="cat3__text">偖邸へは忍び込んだものゝ是から先どうして善いか分らない。其内に暗くなる、腹は減る、</p>
+          </a>
+        </li>
+        <li class="cat3__item">
+          <a href="#" class="cat3__link">
+            <div class="cat3__group">
+              <time class="cat3__time" datetime="2018-02-09">2018.02.09</time>
+              <p class="cat3__category">新着</p>
+            </div>
+            <p class="cat3__text">寒さは寒し、雨が降つて來るといふ始末でもう一刻も猶豫が出來なくなつた。</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="cat3__button">
+      <a href="" class="cat3__button-link">MORE</a>
+    </div>
+  </section id="cat1">
+  <!-- end cat3 -->
+
+</main>
+
+<!-- start footer -->
+<footer class="footer">
+  <div class="footer__main">
+    <div class="container">
+      <ul class="footer__list">
+        <li class="footer__item">
+          <p class="footer__text-head">主人は餘り口を聞かぬ人と見えた。</p>
+          <ul class="footer__text-list">
+            <li class="footer__text-item">下女は口惜しさうに</li>
+            <li class="footer__text-item">吾輩を臺所へ抛り出した。</li>
+            <li class="footer__text-item">かくして吾輩は遂に此家を</li>
+            <li class="footer__text-item">自分の住家と</li>
+            <li class="footer__text-item">極める事にしたのである。</li>
+          </ul>
+        </li>
+        <li class="footer__item">
+          <p class="footer__text-head">主人は餘り口を聞かぬ人と見えた。</p>
+          <ul class="footer__text-list">
+            <li class="footer__text-item">下女は口惜しさうに</li>
+            <li class="footer__text-item">吾輩を臺所へ抛り出した。</li>
+            <li class="footer__text-item">かくして吾輩は遂に此家を</li>
+            <li class="footer__text-item">自分の住家と</li>
+            <li class="footer__text-item">極める事にしたのである。</li>
+          </ul>
+        </li>
+        <li class="footer__item">
+          <p class="footer__text-head">主人は餘り口を聞かぬ人と見えた。</p>
+          <ul class="footer__text-list">
+            <li class="footer__text-item">下女は口惜しさうに</li>
+            <li class="footer__text-item">吾輩を臺所へ抛り出した。</li>
+            <li class="footer__text-item">かくして吾輩は遂に此家を</li>
+            <li class="footer__text-item">自分の住家と</li>
+            <li class="footer__text-item">極める事にしたのである。</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__copylight">
+    <div class="container">
+      <small class="footer__text">Copyright 2019 saigomadeganbatta.</small>
+    </div>
+  </div>
+
+</footer>
+<!-- end footer -->
+
+
+<!-- start jQuery スムーズスクロール トップへ戻る -->
+<div id="js-scroll-top">
+  <a href="#" class="js-scroll-top__link">
+    <i class="fas fa-angle-up"></i>
+  </a>
+</div>
+<!-- end jQuery スムーズスクロール トップへ戻る -->
+
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- javascript -->
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

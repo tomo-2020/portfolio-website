@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+// mixin.scss
+
+
+// メディアクエリ
+
+// $pc: 1024px;
+$tab: 980px;
+$sp: 767px;
+
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}

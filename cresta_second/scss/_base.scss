@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/* --------------------------------------------------------
+   _base.scss
+  -------------------------------------------------------- */
+
+/* --------------------------------------------------------
+   ベース設定
+  -------------------------------------------------------- */
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: $colorWhite;
+
+  color: $colorBlack01;
+  font-family: 'Noto Serif', 'Noto Serif JP', sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: .05em;
+}
+.body-inner {//コンテンツが少ない場合にfooteの位置を最下部に固定する
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 79px; //footerの高さ
+}
+p {
+  font-size: 1.6rem;
+}

@@ -1,0 +1,384 @@
+@charset "utf-8";
+
+/* --------------------------------------------------------
+  インポートファイル
+  -------------------------------------------------------- */
+@import 'variables';
+@import 'mixin';
+@import 'base';
+
+/* --------------------------------------------------------
+    共通パーツ
+  -------------------------------------------------------- */
+.wrapper {
+  overflow: hidden; //子要素が親要素の幅を飛び出した場合の横スクロールバーを非表示にする
+}
+.container {
+  width: 100%;
+  max-width: 1260px; //サイト横幅＋左右のpadding（左右の余白がなくならないように）
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  @include sp {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+.section-title {
+  font-weight: 700;
+  font-style: italic;
+  font-size: 6rem;
+  letter-spacing: .1em;
+  line-height: 1;
+  @include sp {
+    font-size: 3rem;
+  }
+  &--white {
+    color: $colorWhite;
+    text-align: center;
+  }
+
+}
+.button {
+  color: $colorBlack02;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 59px;
+  display: inline-block;
+  background-color: $colorYellow;
+  height: 59px;
+  padding: 0 71px;
+  border-radius: 29.5px;
+  box-shadow: 0 0 6px 0 rgba(27, 19, 16, 1);
+  transition: all 0.5s;
+  &:hover {
+    opacity: 0.7;
+    transition: all 0.5s;
+  }
+}
+
+/* --------------------------------------------------------
+    ヘッダー
+  -------------------------------------------------------- */
+.header {
+  color: transparent;
+  width: 100%;
+  position: absolute;//ヘッダーを固定にしないページのため
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: all 0.3s;
+
+  &__inner {
+    height: 74px;
+    display: flex;
+    align-items: center;
+    @include tab {
+      height: 100px;
+    }
+  }
+  &__title {
+    color: $colorWhite;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 2.6rem;
+  }
+  &__link {
+    transition: all 0.5s;
+    &:hover {
+      opacity: 0.7;
+      transition: all 0.5s;
+    }
+  }
+  &__navi {
+    margin-left: auto;
+    @include tab {
+      display: none;
+    }
+  }
+  &__navi-list {
+    display: flex;
+  }
+  &__navi-item {
+    color: $colorWhite;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.6rem;
+    &:not(:nth-of-type(1)) {
+      margin-left: 30px;
+    }
+  }
+}
+
+/* --------------------------------------------------------
+   page-title
+  -------------------------------------------------------- */
+  .page-title {
+    background-image: url(../image/bg/bg-contact-hero@2x.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 1920px;
+    height: 453px;
+    margin: 0 auto;
+    @include sp {
+      height: 360px;
+    }
+    &__container {
+      width: 100%;
+      max-width: 1260px; //サイト横幅＋左右のpadding（左右の余白がなくならないように）
+      margin: 0 auto;
+      position: relative;
+      top: 50%;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    &__bg-text-wrapper {
+      margin-top: 15px;
+      @include sp {
+        margin-top: 40px;
+      }
+    }
+    &__bg-text {
+      font-weight: 700;
+      font-size: 9rem;
+      line-height: 1;
+      margin-top: 15px;
+      @include sp {
+        font-size: 4rem;
+      }
+      &--left {
+        text-align: left;
+      }
+      &--glay02 {
+        color: rgba(255, 255, 255, 0.1);
+      }
+
+    }
+
+  }
+
+/* --------------------------------------------------------
+   form
+  -------------------------------------------------------- */
+.form-sec {
+
+  padding-top: 100px;
+  padding-bottom: 80px;
+
+  &__inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  &__item {
+
+    &:not(:nth-of-type(1)) {
+      margin-top: 25px;
+    }
+  }
+  &__label {
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+  &__checkbox-list {
+    display: flex;
+    margin-top: 6px;
+    @include sp {
+      flex-direction: column;
+    }
+  }
+  &__checkbox {
+    display: none;
+
+    &:checked + .form-sec__checkbox-label {
+      color: $colorYellow;
+    }
+    &:checked + .form-sec__checkbox-label::before {
+      content: "";
+      display: block;
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      border: 1px solid $colorBlack02;
+      cursor: pointer;
+      background: $colorWhite;
+    }
+    &:checked + .form-sec__checkbox-label::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 5px;
+      width: 7px;
+      height: 14px;
+      transform: rotate(40deg);
+      border-top: none;
+      border-left: none;
+      border-bottom: 3px solid $colorYellow;
+      border-right: 3px solid $colorYellow;
+    }
+  }
+  &__checkbox-label {
+      font-size: 1.6rem;
+      padding-left: 20px;
+      position:relative;
+      margin-right: 20px;
+
+    &::after{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      border: 1px solid $colorBlack02;
+    }
+  }
+  &__text-input {
+    display: block;
+    width: 100%;
+    height: 30px;
+    border: 1px solid $colorBlack02;
+    padding: 4px 10px ;
+    font-size: 1.4rem;
+    color: $colorBlack02;
+  }
+  &__textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 170px;
+    border: 1px solid $colorBlack02;
+    padding: 4px 10px ;
+    font-size: 1.4rem;
+  }
+  &__submit-wrapper {
+    text-align: center;
+    margin-top: 80px;
+  }
+}
+
+  /* --------------------------------------------------------
+   footer
+  -------------------------------------------------------- */
+.footer {
+  width: 100%;
+  position: absolute; //コンテンツが少ない場合にfooteの位置を最下部に固定する
+  bottom: 0; //コンテンツが少ない場合にfooteの位置を最下部に固定する
+  left: 50%;
+  transform: translateX(-50%);
+}
+.footer-inner {// footerの高さが変わる場合は.body-inner のpadding-bottomの値も同じ値にする
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.copyright {
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+/* --------------------------------------------------------
+   jQuery スマホヘッダーナビゲーション ハンバーガーメニュー
+  -------------------------------------------------------- */
+.js-body--noscroll {
+  overflow: hidden;
+}
+.header {
+
+  &__sp-content {
+    display: none;
+    @include tab {
+      display: block;
+    }
+  }
+  &__sp-navi-wrapper{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  &__sp-navi {
+    width: 100%;
+    height: 100%;
+    background-color: $colorBlack01;
+    z-index: 2;
+  }
+  &__sp-navi-list{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  &__sp-navi-item {
+    margin-right: 0;
+    margin-bottom: 40px;
+
+    color: $colorWhite;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+}
+
+.hamburger-bottun {
+  display: block;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 39px;
+  height: 39px;
+  cursor: pointer;
+  transition: .5s;
+  z-index: 3;
+  transition: all 0.5s;
+  @include sp {
+    right: 4%;
+  }
+  &:hover {
+    opacity: .7;
+    transition: all .5s;
+  }
+  &__icon {
+    width: 30px;
+    height: 3px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $colorWhite;
+  }
+  &__icon--top {
+    top: 10px;
+  }
+  &__icon--middle {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__icon--bottom {
+    bottom: 9px;
+  }
+  &.js-hamburger-bottun--close .hamburger-bottun__icon--top {
+    transform: translate(-50%, 8px) rotate(45deg);
+    transition: .5s;
+  }
+  &.js-hamburger-bottun--close .hamburger-bottun__icon--middle {
+    opacity: 0;
+    transition: opacity .5s;
+  }
+  &.js-hamburger-bottun--close .hamburger-bottun__icon--bottom {
+    transform: translate(-50%, -9px) rotate(-45deg);
+    transition: .5s;
+  }
+}
+

@@ -1,0 +1,661 @@
+@charset "utf-8";
+
+/* --------------------------------------------------------
+  インポートファイル
+  -------------------------------------------------------- */
+@import 'variables';
+@import 'mixin';
+@import 'base';
+
+/* --------------------------------------------------------
+    共通パーツ
+  -------------------------------------------------------- */
+.wrapper {
+  overflow: hidden; //子要素が親要素の幅を飛び出した場合の横スクロールバーを非表示にする
+}
+.container {
+  width: 100%;
+  max-width: 1260px; //サイト横幅＋左右のpadding（左右の余白がなくならないように）
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  @include sp {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+.section-title {
+  font-weight: 700;
+  font-style: italic;
+  font-size: 6rem;
+  letter-spacing: .1em;
+  line-height: 1;
+  @include sp {
+    font-size: 3rem;
+  }
+  &--left {
+    color: $colorBlack02;
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 200px;
+      height: 5px;
+      background-color: $colorBlack02;
+      vertical-align: middle;
+      margin-left: 30px;
+      @include sp {
+        width: 90px;
+      }
+    }
+  }
+  &--right {
+    color: $colorWhite;
+    text-align: right;
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 200px;
+      height: 5px;
+      background-color: $colorWhite;
+      vertical-align: middle;
+      margin-left: 30px;
+      @include sp {
+        width: 90px;
+      }
+    }
+  }
+}
+.bg-text-wrapper {
+  margin-top: 70px;
+  @include sp {
+    margin-top: 40px;
+  }
+}
+.bg-text {
+  font-weight: 700;
+  font-size: 9rem;
+  line-height: 1;
+  @include sp {
+    font-size: 4rem;
+  }
+  &--right {
+    text-align: right;
+  }
+  &--left {
+    color: rgba(255, 255, 255, 0.1);
+    text-align: left;
+  }
+  &--glay01 {
+    color: rgba(23, 23, 23, 0.05);
+  }
+  &--glay02 {
+    color: rgba(255, 255, 255, 0.1);
+  }
+}
+.button {
+  color: $colorBlack02;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 59px;
+  display: inline-block;
+  background-color: $colorYellow;
+  height: 59px;
+  padding: 0 71px;
+  border-radius: 29.5px;
+  box-shadow: 0 0 6px 0 rgba(27, 19, 16, 1);
+  transition: all 0.5s;
+  &:hover {
+    opacity: 0.7;
+    transition: all 0.5s;
+  }
+}
+
+/* --------------------------------------------------------
+    ヘッダー
+  -------------------------------------------------------- */
+.header {
+  color: transparent;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: all 0.3s;
+  @include tab {
+    position: absolute;
+  }
+
+  &.js-fixed {//スティッキーヘッダー
+    position: fixed;
+    background-color: $colorBlack02;
+    width: 100%;
+    transition: all 0.3s;
+  }
+  &__inner {
+    height: 74px;
+    display: flex;
+    align-items: center;
+    @include tab {
+      height: 100px;
+    }
+  }
+  &__title {
+    color: $colorWhite;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 2.6rem;
+  }
+  &__link {
+    transition: all 0.5s;
+    &:hover {
+      opacity: 0.7;
+      transition: all 0.5s;
+    }
+  }
+  &__navi {
+    margin-left: auto;
+    @include tab {
+      display: none;
+    }
+  }
+  &__navi-list {
+    display: flex;
+  }
+  &__navi-item {
+    color: $colorWhite;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.6rem;
+    &:not(:nth-of-type(1)) {
+      margin-left: 30px;
+    }
+  }
+}
+
+/* --------------------------------------------------------
+    hero
+  -------------------------------------------------------- */
+.hero {
+  &__list-outer {
+    //slick実装後も画像が左右中央に配置される
+    width: 100%;
+    max-width: 1920px;
+    height: 100vh;
+    // height: 752px;
+    margin: 0 auto;
+    @include sp {
+      height: 599px;
+    }
+  }
+  &__item {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    max-width: 1920px;
+    height: 100vh;
+    // height: 752px;
+    // height: 52vw;
+    // max-height: 1002px;
+    margin: 0 auto;
+    @include sp {
+      height: 599px;
+    }
+
+    &--01 {
+      background-image: url(../image/bg/bg-hero_01@2x.jpg);
+    }
+    &--02 {
+      background-image: url(../image/bg/bg-hero_02@2x.jpg);
+    }
+    &--03 {
+      background-image: url(../image/bg/bg-hero_03@2x.jpg);
+    }
+  }
+  &__item-inner {
+    width: 100%;
+    max-width: 1260px; //サイト横幅＋左右のpadding（左右の余白がなくならないように）
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    padding-left: 30px;
+    padding-right: 30px;
+    @include tab {
+      top: 35%;
+    }
+  }
+  &__box {
+    display: inline-block;
+    @include tab {
+      display: block;
+    }
+  }
+  &__en-catchcopy {
+    color: $colorWhite;
+    font-weight: 700;
+    font-size: 7rem;
+    text-align: center;
+    @include sp {
+      font-size: 3.7rem;
+    }
+  }
+  &__jp-catchcopy {
+    color: $colorWhite;
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 31px;
+    @include sp {
+      font-size: 3rem;
+    }
+  }
+}
+
+/* --------------------------------------------------------
+    Conscept
+  -------------------------------------------------------- */
+.concept-sec {
+  padding-top: 100px;
+  padding-bottom: 70px;
+  @include sp {
+    padding-bottom: 40px;
+  }
+
+  &__catchcopy {
+    color: $colorBlack01;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 70px;
+    @include sp {
+      font-size: 2rem;
+      margin-top: 55px;
+    }
+  }
+  &__box {
+    margin-top: 60px;
+    padding: 0 100px;
+    display: flex;
+    align-items: center;
+    @include tab {
+      flex-direction: column;
+    }
+    @include sp {
+      margin-top: 34px;
+      padding: 0;
+    }
+  }
+  &__desc {
+    color: $colorBlack01;
+    line-height: 1.87;
+    text-align: justify;
+    text-justify: inter-ideograph;
+    width: 44%;
+    @include tab {
+      width: 100%;
+    }
+  }
+  &__image {
+    width: 44%;
+    max-width: 440px;
+    height: auto;
+    margin-left: auto;
+    @include tab {
+      width: 100%;
+      margin-left: initial;
+      margin-top: 34px;
+    }
+    @include sp {
+      margin-top: 30px;
+    }
+
+  }
+}
+
+/* --------------------------------------------------------
+   Works
+  -------------------------------------------------------- */
+.works-sec {
+  padding-top: 100px;
+  padding-bottom: 70px;
+  background-image: url(../image/bg/bg-works@2x.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  max-width: 1920px;
+  height: auto;
+  // height: 68.5%;
+  margin: 0 auto;
+  @include sp {
+    padding-bottom: 40px;
+  }
+
+  &__list {
+    margin-top: 80px;
+    padding: 0 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @include tab {
+      flex-direction: column;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+    }
+    @include sp {
+      margin-top: 50px;
+    }
+  }
+  &__item {
+    &:not(:nth-of-type(1)) {
+      margin-left: 20px;
+      @include tab {
+        margin-top: 50px;
+        margin-left: 0;
+      }
+    }
+  }
+  &__card {
+    max-width: 320px;
+  }
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+  &__caption {
+    color: $colorBlack02;
+    text-align: justify;
+    text-justify: inter-ideograph;
+    line-height: 1.87;
+    width: 100%;
+
+    background-color: $colorWhite;
+    padding: 25px 20px;
+  }
+  &__button-outer {
+    margin-top: 80px;
+    text-align: center;
+  }
+}
+
+/* --------------------------------------------------------
+   Service
+  -------------------------------------------------------- */
+.service-sec {
+  padding-top: 100px;
+  padding-bottom: 70px;
+
+  &__list {
+    margin-top: 80px;
+    display: flex;
+    max-width: 1920px;
+
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    @include tab {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    // max-width: 480px;
+    height: 320px;
+    position: relative;
+
+    &:nth-last-of-type(1) {
+      background-image: url(../image/bg/bg-service_01.jpg);
+    }
+    &:nth-last-of-type(2) {
+      background-image: url(../image/bg/bg-service_02.jpg);
+    }
+    &:nth-last-of-type(3) {
+      background-image: url(../image/bg/bg-service_03.jpg);
+    }
+
+    @include sp {
+      height: 250px;
+    }
+
+    &:not(:nth-of-type(1)) {
+      @include tab {
+      margin-top: 50px;
+      }
+    }
+  }
+  &__title {
+    color: $colorWhite;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 4rem;
+
+    display: inline-block;
+    line-height: 320px;
+    text-align: center;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    transition: all 0.5s;
+    @include sp {
+      font-size: 2rem;
+      line-height: 250px;
+    }
+
+    &:hover {
+      background-color: rgba(40, 47, 53, 0.7);
+    }
+  }
+}
+
+/* --------------------------------------------------------
+   Contact
+  -------------------------------------------------------- */
+.contact-sec {
+  padding-top: 100px;
+  padding-bottom: 70px;
+  background-image: url(../image/bg/bg-contact@2x.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  max-width: 1920px;
+  height: auto;
+  // height: 46.3%;
+  max-height: 889px;
+  margin: 0 auto;
+  @include sp {
+    padding-bottom: 40px;
+  }
+
+  &__text {
+    color: $colorWhite;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1;
+    text-align: center;
+    margin-top: 80px;
+  }
+  &__button-outer {
+    margin-top: 40px;
+    text-align: center;
+    @include sp {
+      margin-top: 30px;
+    }
+  }
+}
+
+/* --------------------------------------------------------
+   footer
+  -------------------------------------------------------- */
+.footer {
+  width: 100%;
+  position: absolute; //コンテンツが少ない場合にfooteの位置を最下部に固定する
+  bottom: 0; //コンテンツが少ない場合にfooteの位置を最下部に固定する
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+.footer-inner {// footerの高さが変わる場合は.body-inner のpadding-bottomの値も同じ値にする
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.copyright {
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+/* --------------------------------------------------------
+   jQuery Slick　スライダー
+  -------------------------------------------------------- */
+.js-hero-slick {
+  position: relative;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s linear;
+}
+.js-hero-slick.slick-initialized {
+  display: block;
+  opacity: 1;
+
+  .slick-dots {
+    position: absolute;
+    bottom: 5%;
+  }
+}
+
+/* --------------------------------------------------------
+   jQuery スムーズスクロール トップへ戻る
+  -------------------------------------------------------- */
+#js-scroll-top {
+  position: fixed;
+  bottom: 60px;
+  right: 40px;
+
+  @include sp {
+    bottom: 15px;
+    right: 15px;
+  }
+}
+.js-scroll-top__link {
+  background-color: $colorBlack01;
+  color: $colorWhite;
+  font-size: 35px;
+  padding: 8px 18px 10px;
+
+  @include sp {
+    font-size: 28px;
+    padding: 8px 16px;
+  }
+}
+.fa-angle-up {
+  color: $colorWhite;
+}
+
+/* --------------------------------------------------------
+   jQuery スマホヘッダーナビゲーション ハンバーガーメニュー
+  -------------------------------------------------------- */
+.js-body--noscroll {
+  overflow: hidden;
+}
+.header {
+
+  &__sp-content {
+    display: none;
+    @include tab {
+      display: block;
+    }
+  }
+  &__sp-navi-wrapper{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  &__sp-navi {
+    width: 100%;
+    height: 100%;
+    background-color: $colorBlack01;
+    z-index: 2;
+  }
+  &__sp-navi-list{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  &__sp-navi-item {
+    margin-right: 0;
+    margin-bottom: 40px;
+
+    color: $colorWhite;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.6rem;
+  }
+}
+
+.hamburger-bottun {
+  display: block;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 39px;
+  height: 39px;
+  cursor: pointer;
+  transition: .5s;
+  z-index: 3;
+  transition: all 0.5s;
+  @include sp {
+    right: 4%;
+  }
+  &:hover {
+    opacity: .7;
+    transition: all .5s;
+  }
+
+  &__icon {
+    width: 30px;
+    height: 3px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $colorWhite;
+  }
+  &__icon--top {
+    top: 10px;
+  }
+  &__icon--middle {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__icon--bottom {
+    bottom: 9px;
+  }
+
+  &.js-hamburger-bottun--close .hamburger-bottun__icon--top {
+    transform: translate(-50%, 8px) rotate(45deg);
+    transition: .5s;
+  }
+  &.js-hamburger-bottun--close .hamburger-bottun__icon--middle {
+    opacity: 0;
+    transition: opacity .5s;
+  }
+  &.js-hamburger-bottun--close .hamburger-bottun__icon--bottom {
+    transform: translate(-50%, -9px) rotate(-45deg);
+    transition: .5s;
+  }
+}
+
